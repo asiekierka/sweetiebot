@@ -1,0 +1,63 @@
+$ shutdown
+
+
+        SHUTDOWN -- Perform an Orderly System Shutdown
+                    on node RARITY
+
+
+%SHUTDOWN-I-OPERATOR, this terminal is now an operator's console
+%SHUTDOWN-I-DISLOGINS, interactive logins will now be disabled
+%SET-I-INTSET, login interactive limit = 0, current interactive value = 8
+%SHUTDOWN-I-STOPQUEUES, the queues on this node will now be stopped
+%%%%%%%%%%%  OPCOM  17-AUG-2012 01:37:15.21  %%%%%%%%%%%
+Operator _RARITY$FTA2: has been enabled, username SYSTEM
+
+%%%%%%%%%%%  OPCOM  17-AUG-2012 01:37:15.53  %%%%%%%%%%%
+Operator status for operator _RARITY$FTA2:
+CENTRAL, PRINTER, TAPES, DISKS, DEVICES, CARDS, NETWORK, CLUSTER, LICENSE,
+OPER1, OPER2, OPER3, OPER4, OPER5, OPER6, OPER7, OPER8, OPER9, OPER10, OPER11,
+OPER12
+
+%SHUTDOWN-I-SITESHUT, the site-specific shutdown procedure will now be invoked
+
+SHUTDOWN message on RARITY from user SYSTEM at _RARITY$FTA2:   01:37:16
+RARITY will shut down in 0 minutes; back up LATER.  Please log off node 
+RARITY.
+SHUTDOWN
+
+5 terminals have been notified on RARITY.
+%SHUTDOWN-I-STOPUSER, all user processes will now be stopped
+
+%SHUTDOWN-I-STOPACMESRV, the ACME server will now be shut down
+%SHUTDOWN-I-STOPAUDIT, the security auditing subsystem will now be shut down
+%SHUTDOWN-I-STOPSECSRV, the security server will now be shut down
+%SHUTDOWN-I-REMOVE, all installed images will now be removed
+%%%%%%%%%%%  OPCOM  17-AUG-2012 01:37:21.75  %%%%%%%%%%%
+Message from user SYSTEM on RARITY
+%SECSRV-I-CIASHUTDOWN, breakin detection and evasion processing is shutting down
+
+%%%%%%%%%%%  OPCOM  17-AUG-2012 01:37:21.82  %%%%%%%%%%%
+Message from user SYSTEM on RARITY
+%SECSRV-I-PROXYSHUTDOWN, proxy processing is shutting down
+
+%%%%%%%%%%%  OPCOM  17-AUG-2012 01:37:22.27  %%%%%%%%%%%
+Message from user SYSTEM on RARITY
+%SECSRV-I-SERVERSHUTDOWN, security server shutting down
+
+%SHUTDOWN-I-DISMOUNT, all volumes will now be dismounted
+
+SYSTEM       job terminated at 17-AUG-2012 03:35:25.82
+
+Accounting information:
+Bufered I/O count:          3613       Peak working set size:     7664
+Direct I/O count:           2540       Peak virtual size:       186752
+Page faults:                3897       Mounted volumes:              1
+Charged CPU time:  0 00:00:11.32       Elapsed time:     0 00:01:00.83
+SYSTEM SHUTDOWN COMPLETE
+
+halted CPU 0
+
+halt code = 5
+HALT instruction executed
+PC = ffffffff80089a84
+>>>_

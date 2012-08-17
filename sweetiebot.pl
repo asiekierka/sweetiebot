@@ -8,12 +8,12 @@ use DBI;
 use warnings;
 use strict;
 
-my $version = '1.0';
+my $version = '1.01';
 my $botinfo = ('Cutie Mark Acquisition Program ' . $version . ' based on PinkieBot v2.0.10 by WaveHack (aka Octavia). Modifications by Ola "AMIGAPony" Hughson');
 
 # --- Initialization ---
 
-print "Cutie Mark Acquicition Program v1.0 started\n";
+print "Cutie Mark Acquisition Program v". $version ." started\n";
 
 print "Loading config\n";
 
@@ -24,15 +24,16 @@ unless (-e 'sweetiebot.ini') {
 	my $cfg = Config::IniFiles->new();
 	$cfg->newval('mysql', 'host', 'localhost');
 	$cfg->newval('mysql', 'username', 'sweetiebot');
-	$cfg->newval('mysql', 'password', 'eldersfrominternet');
+	$cfg->newval('mysql', 'password', 'erCHoparte777');
 	$cfg->newval('mysql', 'database', 'sweetiebot');
-	$cfg->newval('irc', 'nick', 'SweetieBot');
+	$cfg->newval('irc', 'nick', 'Sweetie-Bot');
 	$cfg->newval('irc', 'nickpass', '');
 	$cfg->newval('irc', 'server', 'irc.ponyirc.com');
 	$cfg->newval('irc', 'port', 6667);
 	$cfg->newval('irc', 'channels', '#derpy');
 	$cfg->SetParameterComment('irc', 'channels', 'Separate multiple channels with spaces');
-	$cfg->newval('irc', 'autoload', 'auth admin google log mlfw quoter seen social title watch wikipedia');
+	$cfg->newval('irc', 'autoload', 'auth admin google log mlfw 
+quoter seen title watch wikipedia shutdown');
 	$cfg->SetParameterComment('irc', 'autoload', 'Autoload modules on start, separate with spaces');
 	$cfg->WriteConfig('sweetiebot.ini');
 	exit;
@@ -49,7 +50,7 @@ my $bot = SweetieBot->new(
 	port     => $cfg->val('irc', 'port', '6667'),
 	channels => [split(' ', $cfg->val('irc', 'channels'))],
 	nick     => $cfg->val('irc', 'nick'),
-	name     => ('Cutie Mark Acquisition Program v1.0')
+	name     => ('Cutie Mark Acquisition Program v'.$version)
 );
 
 # moduleList holds an array of module names we have loaded. Iterating through
